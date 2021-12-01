@@ -39,4 +39,3 @@ Step 3 - Kubernetes
   2. Pods
   3. Deployments
   4. Services
-
