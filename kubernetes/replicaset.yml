@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: meal-rs
+  labels:
+    app: meal-app
+spec:
+  selector:
+    matchLabels:
+      app: meal-app
+  replicas: 2
+  template:
+    metadata:
+      name: meal-pod
+      labels:
+        name: meal-pod
+        app: meal-app
+    spec:
+      containers:
+      - name: meal-website
+        image: damola12345/meal-website:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 80

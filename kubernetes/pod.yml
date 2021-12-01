@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: meal-pod
+  labels:
+    name: meal-pod
+    app: meal-app
+spec:
+  containers:
+  - name: meal-website
+    image: damola12345/meal-website:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
